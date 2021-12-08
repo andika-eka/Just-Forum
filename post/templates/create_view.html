@@ -1,10 +1,19 @@
-<form method="POST" enctype="multipart/form-data">
+{% extends "template.html" %}
 
-	<!-- Security token -->
-	{% csrf_token %}
+{% block title %}
+	create post	
+{% endblock %}
 
-	<!-- Using the formset -->
-	{{ form.as_p }}
-	
-	<input type="submit" value="Submit">
-</form>
+{% block content %}
+	<form method="POST" enctype="multipart/form-data">
+
+		<!-- Security token -->
+		{% csrf_token %}
+
+		<!-- Using the formset -->
+		{{ form.as_p }}
+		
+		<input type="submit" value="Submit">
+	</form>
+{% endblock %}
+
